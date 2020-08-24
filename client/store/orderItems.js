@@ -61,7 +61,7 @@ export const editItem = (userId, id, qv) => {
 
 export const addItems = (userId, orderId, productId, price, qv, push) => {
   return async (dispatch) => {
-    //console.log('items thunk 22222222', orderId, productId)
+    console.log('items thunk 22222222', orderId, productId)
     //const {productId, quantity, price, userId,orderId} = item
     const newItem = await axios.post('/api/items', {
       orderId: orderId,

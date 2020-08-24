@@ -30,7 +30,7 @@ router.post('/session', async (req, res, next) => {
 
   Order.create({sessionId: req.session.id, orderitems: []})
     .then((resp) => {
-      console.log(resp)
+      console.log('resp', resp)
       res.status(200).send(resp)
     })
     .catch(next)
@@ -49,7 +49,7 @@ router.get('/session', async (req, res, next) => {
     include: {model: OrderItem, include: {model: Product}}, //include: {model: Product}
   })
     .then((response) => {
-      console.log('><><><><><><><><><><<><><><><>><><><>><><', response)
+      //console.log('><><><><><><><><><><<><><><><>><><><>><><', response)
       res.send(response)
     })
     .catch(next)
