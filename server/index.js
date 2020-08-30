@@ -44,6 +44,10 @@ passport.deserializeUser(async (id, done) => {
   }
 })
 
+app.get('/', function (req, res) {
+  res.redirect('./index.js')
+})
+
 const createApp = () => {
   // logging middleware
   app.use(morgan('dev'))

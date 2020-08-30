@@ -29,6 +29,7 @@ class Search extends Component {
     this.setState({searchOutput: searchList})
     return searchList
   }
+
   render() {
     const {searchInput, searchOutput} = this.state
     const {history} = this.props
@@ -37,7 +38,7 @@ class Search extends Component {
       <Form
         inline
         onSubmit={(e) => {
-          e.preventDefaulte()
+          e.preventDefault()
         }}
       >
         <FormControl
@@ -55,7 +56,7 @@ class Search extends Component {
             style={{backgroundColor: ' #38495e', border: 'none'}}
             onClick={() => {
               let searchResults = this.search()
-              //console.log(history)
+
               this.props.sendSearch(searchResults)
             }}
           >
