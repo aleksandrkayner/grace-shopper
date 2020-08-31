@@ -53,9 +53,9 @@ app.get('*', function (req, res, next) {
   else next() /* Continue to other routes if we're not redirecting */
 })
 
-// app.get('/', function (req, res) {
-//   res.redirect('./index.js')
-// })
+app.get('/', function (req, res) {
+  res.redirect('./index.js')
+})
 
 const createApp = () => {
   // logging middleware
